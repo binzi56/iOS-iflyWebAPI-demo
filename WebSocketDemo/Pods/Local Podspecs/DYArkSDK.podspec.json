@@ -1,0 +1,390 @@
+{
+  "name": "DYArkSDK",
+  "version": "0.1.131.xhxdevelop",
+  "summary": "DYArkSDK",
+  "homepage": "http://www.dianyun.com",
+  "license": {
+    "type": "Copyright",
+    "text": "      Copyright 2005-2013 Huya Inc., All rights reserved.\n"
+  },
+  "authors": {
+    "yy": "yypm@yy.com"
+  },
+  "source": {
+    "git": "ssh://git@git.2tianxin.com:2022/dysdk/iOS/dyarksdk.git",
+    "tag": "0.1.131.xhxdevelop"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "libraries": [
+    "z",
+    "xml2"
+  ],
+  "prefix_header_file": "DYArkSDK/DYArkSDK-Prefix.pch",
+  "dependencies": {
+    "OpenSSL-Universal": [
+      "1.0.2.13"
+    ],
+    "UIImage+BlurredFrame": [
+      "0.0.4"
+    ],
+    "AFNetworking": [
+      "~> 3.1"
+    ],
+    "Masonry": [
+      "~> 1.0"
+    ],
+    "HexColors": [
+      "3.0.0"
+    ],
+    "BlocksKit": [
+      "2.2.5"
+    ],
+    "DZNEmptyDataSet": [
+      "1.8.1"
+    ],
+    "SSZipArchive": [
+      "~>2.1.4"
+    ],
+    "JRSwizzle": [
+      "1.0"
+    ],
+    "Protobuf": [
+      "~> 3.9.2"
+    ],
+    "SVProgressHUD": [
+      "2.2.5"
+    ],
+    "SDWebImage/WebP": [
+      "4.4.6"
+    ],
+    "AlicloudHTTPDNS": [
+      "1.7.3"
+    ],
+    "IQKeyboardManager": [
+      "6.2.0"
+    ],
+    "pop": [
+      "1.0.12"
+    ],
+    "libwebp": [
+      "1.0.3"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "DYArkSDKManager",
+      "source_files": "DYArkSDK/DYArkSDKManager/*.{h,mm,m}"
+    },
+    {
+      "name": "DYKits",
+      "subspecs": [
+        {
+          "name": "CircularQueue",
+          "source_files": "DYArkSDK/DYKits/CircularQueue/*.{m,h}"
+        },
+        {
+          "name": "WeakProxy",
+          "source_files": "DYArkSDK/DYKits/WeakProxy/*.{h,m}"
+        },
+        {
+          "name": "PinyinSearch",
+          "source_files": "DYArkSDK/DYKits/PinyinSearch/*.{h,cpp}",
+          "resources": "DYArkSDK/DYKits/PinyinSearch/*.txt"
+        },
+        {
+          "name": "OOMDetector",
+          "source_files": "DYArkSDK/DYKits/OOMDetector/*.{m,h}"
+        },
+        {
+          "name": "HYThread",
+          "source_files": "DYArkSDK/DYKits/HYThread/*.{m,h}"
+        },
+        {
+          "name": "HYEventTracker",
+          "source_files": "DYArkSDK/DYKits/HYEventTracker/**/*.{m,mm,h}"
+        },
+        {
+          "name": "MutilDelegates",
+          "source_files": "DYArkSDK/DYKits/MutilDelegates/**/*.{m,mm,h}"
+        },
+        {
+          "name": "ZombieDetector",
+          "source_files": "DYArkSDK/DYKits/ZombieDetector/*.{mm,h,c,m}",
+          "subspecs": [
+            {
+              "name": "mrc",
+              "source_files": "DYArkSDK/DYKits/ZombieDetector/mrc/*.{mm,h}",
+              "requires_arc": false
+            }
+          ]
+        },
+        {
+          "name": "YYModel",
+          "source_files": "DYArkSDK/DYKits/YYModel/**/*.{m,mm,h}"
+        },
+        {
+          "name": "MJRefresh",
+          "source_files": "DYArkSDK/DYKits/MJRefresh/**/*.{m,h}",
+          "resources": "DYArkSDK/DYKits/MJRefresh/**/*.{bundle}",
+          "subspecs": [
+            {
+              "name": "Base",
+              "source_files": "DYArkSDK/DYKits/MJRefresh/Base/*.{m,h}"
+            },
+            {
+              "name": "Custom",
+              "subspecs": [
+                {
+                  "name": "Footer",
+                  "source_files": "DYArkSDK/DYKits/MJRefresh/Custom/Footer/*.{m,h}"
+                },
+                {
+                  "name": "Header",
+                  "source_files": "DYArkSDK/DYKits/MJRefresh/Custom/Header/*.{m,h}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "DYTimeMonitor",
+          "source_files": "DYArkSDK/DYKits/DYTimeMonitor/*.{m,h}"
+        }
+      ]
+    },
+    {
+      "name": "DYCategories",
+      "source_files": "DYArkSDK/DYCategories/*.{m,h}",
+      "subspecs": [
+        {
+          "name": "UIKit",
+          "source_files": "DYArkSDK/DYCategories/UIKit/*.{m,h}"
+        },
+        {
+          "name": "YYWebImage",
+          "source_files": "DYArkSDK/DYCategories/YYWebImage/**/*.{m,h}"
+        },
+        {
+          "name": "Foundation",
+          "source_files": "DYArkSDK/DYCategories/Foundation/*.{mm,m,h}",
+          "subspecs": [
+            {
+              "name": "mrc",
+              "source_files": "DYArkSDK/DYCategories/Foundation/mrc/*.{mm,m,h}",
+              "requires_arc": false
+            }
+          ]
+        },
+        {
+          "name": "Quartz",
+          "source_files": "DYArkSDK/DYCategories/Quartz/*.{m,h}"
+        }
+      ]
+    },
+    {
+      "name": "DYSignal",
+      "source_files": "DYArkSDK/DYSignal/**/*.{h,m,mm,cc}"
+    },
+    {
+      "name": "DYAsyncLabel",
+      "source_files": "DYArkSDK/DYAsyncLabel/*.{m,h}"
+    },
+    {
+      "name": "DYHelpers",
+      "subspecs": [
+        {
+          "name": "HYEventKit",
+          "source_files": "DYArkSDK/DYHelpers/HYEventKit/*.{m,h}"
+        },
+        {
+          "name": "DES3Helper",
+          "source_files": "DYArkSDK/DYHelpers/DES3Helper/*.{m,h}"
+        },
+        {
+          "name": "NetworkManager",
+          "source_files": "DYArkSDK/DYHelpers/NetworkManager/*.{h,m}"
+        },
+        {
+          "name": "StringHelper",
+          "source_files": "DYArkSDK/DYHelpers/StringHelper/*.{h,m}"
+        },
+        {
+          "name": "CacheManager",
+          "source_files": "DYArkSDK/DYHelpers/CacheManager/*.{h,m}"
+        },
+        {
+          "name": "KWWebImageManager",
+          "source_files": "DYArkSDK/DYHelpers/KWWebImageManager/*.{h,m}"
+        },
+        {
+          "name": "HYSettingsData",
+          "source_files": "DYArkSDK/DYHelpers/HYSettingsData/*.{m,h}"
+        },
+        {
+          "name": "UIHelper",
+          "source_files": "DYArkSDK/DYHelpers/UIHelper/*.{h,m}"
+        },
+        {
+          "name": "AppHelpers",
+          "source_files": "DYArkSDK/DYHelpers/AppHelpers/*.{m,h}"
+        },
+        {
+          "name": "HashHelper",
+          "source_files": "DYArkSDK/DYHelpers/HashHelper/*.{m,h}"
+        },
+        {
+          "name": "HYProgressHUD",
+          "source_files": "DYArkSDK/DYHelpers/HYProgressHUD/*.{m,h}"
+        },
+        {
+          "name": "HttpManager",
+          "source_files": "DYArkSDK/DYHelpers/HttpManager/*.{m,h}"
+        },
+        {
+          "name": "GTM",
+          "source_files": "DYArkSDK/DYHelpers/GTM/*.{h,m}"
+        },
+        {
+          "name": "ImageHelper",
+          "source_files": "DYArkSDK/DYHelpers/ImageHelper/*.{mm,h}"
+        },
+        {
+          "name": "NetWorkHelper",
+          "source_files": "DYArkSDK/DYHelpers/NetWorkHelper/*.{m,h}"
+        },
+        {
+          "name": "HYJSONHelper",
+          "source_files": "DYArkSDK/DYHelpers/HYJSONHelper/*.{m,h}"
+        },
+        {
+          "name": "VersionHelper",
+          "source_files": "DYArkSDK/DYHelpers/VersionHelper/*.{m,h}"
+        }
+      ]
+    },
+    {
+      "name": "DYArch",
+      "subspecs": [
+        {
+          "name": "HYDataCenter",
+          "source_files": "DYArkSDK/DYArch/HYDataCenter/*.{h,m}",
+          "subspecs": [
+            {
+              "name": "Implement",
+              "source_files": "DYArkSDK/DYArch/HYDataCenter/Implement/**/*.{h,m,mm}"
+            }
+          ]
+        },
+        {
+          "name": "ServiceCenter",
+          "subspecs": [
+            {
+              "name": "Core",
+              "source_files": "DYArkSDK/DYArch/ServiceCenter/Core/*.{h,m}"
+            },
+            {
+              "name": "Test",
+              "source_files": "DYArkSDK/DYArch/ServiceCenter/Test/*.{h,m}"
+            },
+            {
+              "name": "Loader",
+              "source_files": "DYArkSDK/DYArch/ServiceCenter/Loader/*.{m,h}"
+            },
+            {
+              "name": "Base",
+              "source_files": "DYArkSDK/DYArch/ServiceCenter/Base/*.{h,m}"
+            }
+          ]
+        },
+        {
+          "name": "HYWupManager",
+          "source_files": "DYArkSDK/DYArch/HYWupManager/*.{h,m}"
+        },
+        {
+          "name": "HYPlugin",
+          "source_files": "DYArkSDK/DYArch/HYPlugin/*.{h,m}",
+          "subspecs": [
+            {
+              "name": "EventCenter",
+              "source_files": "DYArkSDK/DYArch/HYPlugin/EventCenter/*.{m,h}"
+            }
+          ]
+        },
+        {
+          "name": "DYRouter",
+          "source_files": "DYArkSDK/DYArch/DYRouter/*.{m,mm,h}"
+        },
+        {
+          "name": "DYMediator",
+          "source_files": "DYArkSDK/DYArch/DYMediator/*.{m,mm,h}"
+        }
+      ]
+    },
+    {
+      "name": "DYLog",
+      "source_files": "DYArkSDK/DYLog/*.{h,mm,m}",
+      "subspecs": [
+        {
+          "name": "mars",
+          "vendored_frameworks": "DYArkSDK/DYSignal/mars-open-iphone/mars.framework"
+        }
+      ]
+    },
+    {
+      "name": "DYUtils",
+      "subspecs": [
+        {
+          "name": "AccurateTimer",
+          "source_files": "DYArkSDK/DYUtils/AccurateTimer/*.{m,h}"
+        },
+        {
+          "name": "HYDelayCallbackManager",
+          "source_files": "DYArkSDK/DYUtils/HYDelayCallbackManager/*.{m,h}"
+        },
+        {
+          "name": "HYSafeContainer",
+          "source_files": "DYArkSDK/DYUtils/HYSafeContainer/*.{h,m}"
+        },
+        {
+          "name": "Macro",
+          "source_files": "DYArkSDK/DYUtils/Macro/*.{h,m}"
+        },
+        {
+          "name": "ResourceManager",
+          "source_files": "DYArkSDK/DYUtils/ResourceManager/*.{h,m}"
+        },
+        {
+          "name": "StyleManager",
+          "source_files": "DYArkSDK/DYUtils/StyleManager/*.{h,m}"
+        },
+        {
+          "name": "Utils",
+          "source_files": "DYArkSDK/DYUtils/Utils/*.{h,m}"
+        }
+      ]
+    },
+    {
+      "name": "DYBarrage",
+      "source_files": "DYArkSDK/DYBarrage/**/*.{h,mm,m}"
+    },
+    {
+      "name": "DYTestMode",
+      "source_files": "DYArkSDK/DYTestMode/*.{h,mm,m}"
+    },
+    {
+      "name": "DYInterlockScrollView",
+      "source_files": "DYArkSDK/DYInterlockScrollView/*.{h,mm,m}"
+    },
+    {
+      "name": "DYMenu",
+      "source_files": "DYArkSDK/DYMenu/**/*.{h,mm,m}"
+    },
+    {
+      "name": "DYCustomButton",
+      "source_files": "DYArkSDK/DYCustomButton/*.{h,mm,m}"
+    }
+  ]
+}
